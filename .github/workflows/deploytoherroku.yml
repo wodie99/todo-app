@@ -50,7 +50,7 @@ jobs:
     needs: build-backend
     environment:
       name: production-heroku
-      url: https://cgn-22-1-todo-app.herokuapp.com/
+      url: https://todowd.herokuapp.com/
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
     steps:
@@ -62,6 +62,6 @@ jobs:
       - name: Login to Heroku
         run: heroku container:login
       - name: Push Docker Container
-        run: heroku container:push web -a cgn-22-1-todo-app
+        run: heroku container:push web -a todowd
       - name: Release Docker Container
-        run: heroku container:release web -a cgn-22-1-todo-app
+        run: heroku container:release web -a todowd
