@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {Todo} from "../model/Todo";
+import {TodoTTO} from "../model/TodoTTO";
 
 export function getTodos() {
   return axios.get<Todo[]>("/api/todo")
@@ -7,8 +8,7 @@ export function getTodos() {
 }
 
 export const postTodo = (newDescription: string) => {
-  const newTodo: Todo = {
-    id: "new",
+  const newTodo: TodoTTO = {
     description: newDescription,
     status: 'OPEN',
   }
